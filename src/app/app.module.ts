@@ -1,5 +1,5 @@
 import { Component, NgModule, Input } from '@angular/core';
-import { 
+import {
   MatRadioModule,
   MatRadioButton,
   MatToolbarModule,
@@ -18,10 +18,25 @@ export class HelloWorldComponent {
   @Input() name;
 }
 
+@Component({
+  selector: 'centrl-tooltip',
+  template: `
+    <div class="tooltip-container">
+      <div class="tooltip">
+        {{ text }}
+      </div>
+    </div>
+  `
+})
+export class TooltipComponent {
+  @Input() public text: string;
+}
+
 export const CEComponents = [
   HelloWorldComponent,
   MatRadioButton,
-  MatToolbar
+  MatToolbar,
+  TooltipComponent
 ];
 
 @NgModule({
@@ -31,7 +46,7 @@ export const CEComponents = [
     MatRadioModule,
     MatToolbarModule
   ],
-  declarations: [HelloWorldComponent],
+  declarations: [HelloWorldComponent, TooltipComponent],
   entryComponents: CEComponents
 })
 export class CustomElementsModule {

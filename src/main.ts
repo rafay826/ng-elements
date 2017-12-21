@@ -1,5 +1,4 @@
 import './polyfills';
-import {map} from 'rxjs/operators';
 
 import { registerAsCustomElements } from './@angular/elements';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -13,7 +12,7 @@ registerAsCustomElements(CEComponents, () => {
   const helloWorld: Element | any = document.querySelector('hello-world');
   const radioButtons: NodeListOf<Element> | any = document.querySelectorAll('mat-radio-button');
 
-  radioButtons.map(btn => {
+  radioButtons.forEach(btn => {
     btn.addEventListener('change', () => {
       if (btn.checked) {
         helloWorld.name = btn.value;
