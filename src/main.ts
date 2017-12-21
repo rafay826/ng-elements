@@ -10,8 +10,8 @@ import { CustomElementsModule, CEComponents } from './app/app.module';
 registerAsCustomElements(CEComponents, () => {
   return platformBrowserDynamic().bootstrapModule(CustomElementsModule);
 }).then(_ => {
-  const helloWorld: any = document.querySelector('hello-world');
-  const radioButtons: any = document.querySelectorAll('mat-radio-button');
+  const helloWorld: Element | any = document.querySelector('hello-world');
+  const radioButtons: NodeListOf<Element> | any = document.querySelectorAll('mat-radio-button');
 
   radioButtons.map(btn => {
     btn.addEventListener('change', () => {
