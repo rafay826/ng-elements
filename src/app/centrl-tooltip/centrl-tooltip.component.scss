@@ -1,0 +1,23 @@
+@import '../../assets/scss/variables';
+
+:host {
+  .tooltip-container {
+    .text {
+      position: relative;
+      .tooltip {
+        background-color: $tooltip-background;
+        color: $white;
+        position: absolute;
+        padding: 5px;
+        border-radius: 4px;
+        z-index: 1;
+        visibility: hidden;
+      }
+      &:hover {
+        .tooltip {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
