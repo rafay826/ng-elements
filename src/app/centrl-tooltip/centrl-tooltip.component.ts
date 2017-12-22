@@ -17,9 +17,6 @@ export class CentrlTooltipComponent {
   @ViewChild('toolTip') toolTip: ElementRef;
   @Input() public text: string;
 
-  constructor(private el: ElementRef) {
-  }
-
   @HostListener('mouseenter')
   onMouseEnter() {
     this.toolTip.nativeElement.style.visibility = 'visible';
